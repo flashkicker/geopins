@@ -3,10 +3,12 @@ import { withStyles } from "@material-ui/core/styles"
 import Context from "../context"
 import { Box, Nav, Text, Header, Avatar, Menu } from "grommet"
 import { MapLocation, Logout, Menu as MenuIcon } from "grommet-icons"
+import Signout from "./Auth/Signout"
 
 const Navbar = (props) => {
 	const {
 		state: { currentUser },
+		dispatch,
 	} = useContext(Context)
 
 	return (
@@ -43,8 +45,14 @@ const Navbar = (props) => {
 							),
 						},
 						{
-							label: <Box alignSelf="center">Logout</Box>,
-							onClick: () => {},
+							label: (
+								<Box alignSelf="center">
+									<Signout />
+								</Box>
+							),
+							onClick: () => {
+								dispatch({ type: "SIGNOUT_USER" })
+							},
 							icon: (
 								<Box pad="small">
 									<Logout size="medium" />
@@ -57,40 +65,6 @@ const Navbar = (props) => {
 		</Header>
 	)
 }
-
-// const Header = ({ classes }) => {
-// 	const {
-// 		state: { currentUser },
-// 	} = useContext(Context)
-
-// 	return (
-// 		<div className={classes.root}>
-// 			<AppBar position="static">
-// 				<Toolbar>
-// 					<div className={classes.grow}>
-// 						<MapIcon className={classes.icon} />
-// 						<Typography component="h1" variant="h6" color="inherit" noWrap>
-// 							GeoPins
-// 						</Typography>
-// 					</div>
-// 					{currentUser && (
-// 						<div className={classes.grow}>
-// 							<img
-// 								className={classes.picture}
-// 								src={currentUser.picture}
-// 								alt={currentUser.name}
-// 							/>
-// 							<Typography variant="h5" color="inherit" noWrap>
-// 								{currentUser.name}
-// 							</Typography>
-// 						</div>
-// 					)}
-//           <Signout />
-// 				</Toolbar>
-// 			</AppBar>
-// 		</div>
-// 	)
-// }
 
 const styles = (theme) => ({
 	root: {

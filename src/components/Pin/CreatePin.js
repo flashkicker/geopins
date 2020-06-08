@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import axios from "axios"
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { withStyles } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
 import Typography from "@material-ui/core/Typography"
@@ -169,8 +169,8 @@ const styles = (theme) => ({
 		marginLeft: theme.spacing.unit,
 	},
 	button: {
-		marginTop: theme.spacing.unit * 2,
-		marginBottom: theme.spacing.unit * 2,
+		marginTop: theme.spacing.unit(2),
+		marginBottom: theme.spacing.unit(2),
 		marginRight: theme.spacing.unit,
 		marginLeft: 0,
 	},

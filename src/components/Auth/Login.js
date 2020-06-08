@@ -44,6 +44,7 @@ const Login = ({ classes }) => {
 			</Typography>
 			<GoogleLogin
 				clientId="512766811123-3et0u4gq6q27r7j1ssloo1ogbn2b0eqb.apps.googleusercontent.com"
+				cookiePolicy={"single_host_origin"}
 				onSuccess={onSuccess}
 				isSignedIn={true}
 				onFailure={onFailure}

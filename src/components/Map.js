@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react"
 import ReactMapGL, { NavigationControl, Marker, Popup } from "react-map-gl"
 import { Subscription } from "react-apollo"
-import differenceInMinutes from "date-fns/difference_in_minutes"
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery"
+import differenceInMinutes from 'date-fns/differenceInMinutes'
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import Blog from "./Blog"
 import { withStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
@@ -35,6 +35,7 @@ const Map = ({ classes }) => {
 
 	useEffect(() => {
 		getUserPosition()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const [popup, setPopup] = useState(null)
@@ -44,6 +45,7 @@ const Map = ({ classes }) => {
 			popup && state.pins.findIndex((pin) => pin._id === popup._id) > -1
 
 		if (!pinExists) setPopup(null)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state.pins.length])
 
 	const getUserPosition = () => {
@@ -77,6 +79,7 @@ const Map = ({ classes }) => {
 
 	useEffect(() => {
 		getPins()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const getPins = async () => {
