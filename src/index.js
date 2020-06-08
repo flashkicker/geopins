@@ -17,7 +17,7 @@ import * as serviceWorker from "./serviceWorker"
 const wsLink = new WebSocketLink({
 	uri:
 		process.env.NODE_ENV === "production"
-			? "wss://flashkicker-geopins.herokuapp.com/graphql"
+			? "wss://flashkicker-geopins-server.herokuapp.com/graphql"
 			: "ws://localhost:4000/graphql",
 	options: {
 		reconnect: true,
