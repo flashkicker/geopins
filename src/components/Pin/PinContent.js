@@ -36,7 +36,7 @@ const PinContent = ({ classes }) => {
 				gutterBottom
 			>
 				<AccessTimeIcon className={classes.icon} />
-				{format(Number(createdAt), "MMM Do, YYYY")}
+				{format(Number(createdAt), "MMM Do, yyyy")}
 			</Typography>
 			<Typography variant="subtitle1" gutterBottom>
 				{content}
