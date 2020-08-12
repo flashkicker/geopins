@@ -169,8 +169,8 @@ const styles = (theme) => ({
 		marginLeft: theme.spacing.unit,
 	},
 	button: {
-		marginTop: theme.spacing.unit(2),
-		marginBottom: theme.spacing.unit(2),
+		marginTop: theme.spacing(2),
+		marginBottom: theme.spacing(2),
 		marginRight: theme.spacing.unit,
 		marginLeft: 0,
 	},
